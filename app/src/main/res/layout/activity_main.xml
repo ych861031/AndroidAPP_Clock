@@ -72,5 +72,13 @@
             android:onClick="fn_setClock"
             />
 
+        <TextView
+            android:id="@+id/textView_settime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="36sp" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

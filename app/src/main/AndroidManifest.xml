@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name=".Clock"></receiver>
+
 
     </application>
 
