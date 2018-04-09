@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent();
         intent.setClass(MainActivity.this,Clock.class);
-        pendingIntent = PendingIntent.getBroadcast(MainActivity.this,1,intent,0);
 
+        pendingIntent = PendingIntent.getBroadcast(MainActivity.this,1,intent,0);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
     }
@@ -44,18 +44,17 @@ public class MainActivity extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         c.setTimeInMillis(System.currentTimeMillis());
 
+        //設定觸發時間
         c.set(Calendar.HOUR_OF_DAY, Integer.parseInt(editText_hour.getText().toString()));
         c.set(Calendar.MINUTE, Integer.parseInt(editText_minute.getText().toString()));
         c.set(Calendar.SECOND,0);
         c.set(Calendar.MILLISECOND,0);
 
 
-
+        //設定alarmManger模式
         alarmManager.set(AlarmManager.RTC_WAKEUP,c.getTimeInMillis()-500,pendingIntent);
 
         Toast.makeText(MainActivity.this,"鬧鐘設定完成",Toast.LENGTH_SHORT).show();
-
-
         textView_setview.setText("鬧鐘設定時間:"+editText_hour.getText().toString()+":"+editText_minute.getText().toString());
     }
 }
